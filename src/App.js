@@ -5,7 +5,6 @@ import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  /* Define state variables for contacts and appointments */
   const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
 
@@ -14,9 +13,7 @@ function App() {
     APPOINTMENTS: "/appointments",
   };
 
-  /* Implement functions to add data to contacts and appointments */
   const addContact = (contact) => setContacts((prev) => [contact, ...prev]);
-
   const addAppointment = (appointment) =>
     setAppointments((prev) => [appointment, ...prev]);
 

@@ -7,15 +7,15 @@ export const AppointmentsPage = ({
   contacts,
   addAppointment,
 }) => {
-  /* Define state variables for appointment info */
   const [title, setTitle] = useState("");
-  const [contact, setContact] = useState("");
+  const [contact, setContact] = useState(
+    contacts.length > 0 ? contacts[0].name : ""
+  );
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* Add contact info and clear data */
     const contactInfo = { title, contact, date, time };
     addAppointment(contactInfo);
     setTitle("");
@@ -44,7 +44,7 @@ export const AppointmentsPage = ({
       <hr />
       <section>
         <h2>Appointments</h2>
-        <TileList data={appointments} />
+        <TileList tiles={appointments} />
       </section>
     </div>
   );
